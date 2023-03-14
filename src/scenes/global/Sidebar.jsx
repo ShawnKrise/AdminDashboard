@@ -20,6 +20,7 @@ import MapOutlinedIcon from "@mui/icons-material/MapOutlined";
 const Item = ({ title, to, icon, selected, setSelected }) => {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
+  //set return so we don't have to type this over and over for titles and icons
   return (
     <MenuItem
       active={selected === title}
