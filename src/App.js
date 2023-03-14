@@ -1,11 +1,9 @@
-import { ColorModeContext, useMode } from "./theme";
-import { CssBaseline, ThemeProvider } from "@mui/material";
+import { useState } from "react";
 import { Routes, Route } from "react-router-dom";
 import Topbar from "./scenes/global/Topbar";
-import Dashboard from "./scenes/dashboard";
 import Sidebar from "./scenes/global/Sidebar";
-import { useState } from "react";
-import Team from "./scenes/team";
+import Dashboard from "./scenes/dashboard";
+// import Team from "./scenes/team";
 // import Invoices from "./scenes/invoices";
 // import Contacts from "./scenes/contacts";
 // import Bar from "./scenes/bar";
@@ -14,7 +12,9 @@ import Team from "./scenes/team";
 // import Pie from "./scenes/pie";
 // import FAQ from "./scenes/faq";
 // import Geography from "./scenes/geography";
-// import Calendar from "./scenes/calendar";
+import { CssBaseline, ThemeProvider } from "@mui/material";
+import { ColorModeContext, useMode } from "./theme";
+// import Calendar from "./scenes/calendar/calendar";
 
 function App() {
   const [theme, colorMode] = useMode();
@@ -30,7 +30,7 @@ function App() {
             <Topbar setIsSidebar={setIsSidebar}/>
             <Routes>
               <Route path="/" element={<Dashboard />} />
-              <Route path="/team" element={<Team />} />
+              {/* <Route path="/team" element={<Team />} /> */}
               {/* <Route path="/contacts" element={<Contacts />} /> */}
               {/* <Route path="/invoices" element={<Invoices />} /> */}
               {/* <Route path="/form" element={<Form />} /> */}

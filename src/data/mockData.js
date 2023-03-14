@@ -1,7 +1,5 @@
 import { tokens } from "../theme";
 
-// Note: In real life data would be coming from an API, not a mockData file like this. 
-
 export const mockDataTeam = [
   {
     id: 1,
