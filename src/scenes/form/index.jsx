@@ -39,7 +39,7 @@ const Form = () => {
     const handleFormSubmit = (values) => {
         console.log(values);
     }
-//Note: In textField !! is a double negative to avoid error validation when not touching
+//Note: In textField !! is a double negative to avoid error validation when not touching input box
     return (<Box m="20px">
         <Header title="CREATE USER" 
         subtitle="Create a New User Profile" />
