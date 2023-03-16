@@ -91,7 +91,9 @@ const Calendar = () => {
         </Box>
 
         {/* Calendar */}
-        {/* Note: included ID's automatically displayed on calendar for initialevent demonstration purposes. */}
+        {/* Note: included ID's automatically displayed on calendar
+         for initialevent demonstration purposes. */}
+         {/* Note: events listed by added not by date */}
         <Box flex="1 1 100%" ml="15px">
           <FullCalendar
             height="75vh"
