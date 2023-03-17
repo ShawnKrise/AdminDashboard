@@ -2,9 +2,11 @@ import { useTheme } from "@mui/material";
 import { ResponsiveBar} from "@nivo/bar";
 import { tokens } from "../theme";
 import { mockBarData as data } from "../data/mockData";
+import isDashboard from "../scenes/bar";
+
 
 //BarChart located in components instead of scenes 
-//since it's used in two locations
+//since it's used in two locations, so isDashboard imported
 //takes data from mockData folder
 const BarChart = () => {
     const theme = useTheme();
@@ -105,7 +107,7 @@ const BarChart = () => {
             tickSize: 5,
             tickPadding: 5,
             tickRotation: 0,
-            legend: 'country',
+            legend: isDashboard ? undefined : 'country',
             legendPosition: 'middle',
             legendOffset: 32
         }}
@@ -113,7 +115,7 @@ const BarChart = () => {
             tickSize: 5,
             tickPadding: 5,
             tickRotation: 0,
-            legend: 'food',
+            legend: isDashboard ? undefined : 'food',
             legendPosition: 'middle',
             legendOffset: -40
         }}
