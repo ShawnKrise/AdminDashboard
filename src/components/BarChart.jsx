@@ -2,13 +2,13 @@ import { useTheme } from "@mui/material";
 import { ResponsiveBar} from "@nivo/bar";
 import { tokens } from "../theme";
 import { mockBarData as data } from "../data/mockData";
-import isDashboard from "../scenes/bar";
+
 
 //Set up with nivo
 //BarChart located in components instead of scenes 
 //since it's used in two locations, so isDashboard imported
 //takes data from mockData folder
-const BarChart = () => {
+const BarChart = ( isDashboard = false) => {
     const theme = useTheme();
     const colors = tokens(theme.palette.mode);
 
