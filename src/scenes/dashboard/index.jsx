@@ -30,7 +30,7 @@ const Dashboard = () => {
         <Box>
            {/* Mock download report button*/}
             <Button
-                sx={{ backgroundColor: colors.blueAccent[700],
+                sx={{ backgroundColor: colors.blueAccent[800],
                      color: colors.grey[100], 
                      fontSize: "14px", 
                      fontWeight: "bold",
