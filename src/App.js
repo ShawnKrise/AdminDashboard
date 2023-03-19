@@ -24,7 +24,7 @@ function App() {
     <ColorModeContext.Provider value={colorMode}>
       <ThemeProvider theme={theme}>
         <CssBaseline />
-        <div className="app" style={{ display: 'flex', flexDirection: 'row'}}>
+        <div className="app" style={{ display: 'flex'}}>
           <Sidebar isSidebar={isSidebar}/>
           <main className="content" tyle={{ order: 2}}>
             <Topbar setIsSidebar={setIsSidebar}/>

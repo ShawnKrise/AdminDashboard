@@ -17,13 +17,18 @@ const Dashboard = () => {
     const theme = useTheme();
     const colors = tokens(theme.palette.mode);
 
+    //Next time, seperate rows into seperate components
+    //That would make dashboard easier to read
     return (
     <Box m="20px">
-        <Box display="flex" justifyContent="space-between" alignItems="center">
+        <Box display="flex" 
+        justifyContent="space-between" 
+        alignItems="center">
             <Header title="DASHBOARD" subtitle="Welcome to the dashboard"/>
-        </Box>
+       
 
         <Box>
+           {/* Mock download report button*/}
             <Button
                 sx={{ backgroundColor: colors.blueAccent[700],
                      color: colors.grey[100], 
@@ -36,8 +41,8 @@ const Dashboard = () => {
                 Download Reports
             </Button>
         </Box>
-
-            {/* Setup Grid system for charts */}
+    </Box>
+        {/* Setup Grid system for charts */}
             <Box
         display="grid"
         gridTemplateColumns="repeat(12, 1fr)"
@@ -53,7 +58,7 @@ const Dashboard = () => {
           justifyContent="center"
         >
           <StatBox
-            title="12,361"
+            title="8,221"
             subtitle="Emails Sent"
             progress="0.75"
             increase="+14%"
@@ -72,7 +77,7 @@ const Dashboard = () => {
           justifyContent="center"
         >
           <StatBox
-            title="431,225"
+            title="331,021"
             subtitle="Sales Obtained"
             progress="0.50"
             increase="+21%"
@@ -91,7 +96,7 @@ const Dashboard = () => {
           justifyContent="center"
         >
           <StatBox
-            title="32,441"
+            title="21,211"
             subtitle="New Clients"
             progress="0.30"
             increase="+5%"
@@ -110,7 +115,7 @@ const Dashboard = () => {
           justifyContent="center"
         >
           <StatBox
-            title="1,325,134"
+            title="967,231"
             subtitle="Traffic Received"
             progress="0.80"
             increase="+43%"
@@ -148,7 +153,7 @@ const Dashboard = () => {
                 fontWeight="bold"
                 color={colors.greenAccent[500]}
               >
-                $59,342.32
+                $70,258.19
               </Typography>
             </Box>
             <Box>
@@ -236,7 +241,7 @@ const Dashboard = () => {
               color={colors.greenAccent[500]}
               sx={{ mt: "15px" }}
             >
-              $48,352 revenue generated
+              $58,678 revenue generated
             </Typography>
             <Typography>Includes extra misc expenditures and costs</Typography>
           </Box>
@@ -268,7 +273,7 @@ const Dashboard = () => {
             fontWeight="600"
             sx={{ marginBottom: "15px" }}
           >
-            Geography Based Traffic
+            Geography Traffic
           </Typography>
           <Box height="200px">
             <GeographyChart isDashboard={true} />
