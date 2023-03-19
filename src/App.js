@@ -1,7 +1,5 @@
-import { useState } from "react";
 import { Routes, Route } from "react-router-dom";
-import Topbar from "./scenes/global/Topbar";
-import Sidebar from "./scenes/global/Sidebar";
+import Layout from "./scenes/layout";
 import Dashboard from "./scenes/dashboard";
 import Team from "./scenes/team";
 import Invoices from "./scenes/invoices";
@@ -18,17 +16,14 @@ import Calendar from "./scenes/calendar";
 
 function App() {
   const [theme, colorMode] = useMode();
-  const [isSidebar, setIsSidebar] = useState(true);
 
   return (
+    <div className="app" >
     <ColorModeContext.Provider value={colorMode}>
       <ThemeProvider theme={theme}>
-        <CssBaseline />
-        <div className="app" style={{ display: 'flex'}}>
-          <Sidebar isSidebar={isSidebar}/>
-          <main className="content" tyle={{ order: 2}}>
-            <Topbar setIsSidebar={setIsSidebar}/>
-            <Routes>
+        <CssBaseline />     
+          <Routes>
+            <Route element={<Layout />}>
               <Route path="/" element={<Dashboard />} />
               <Route path="/team" element={<Team />} />
               <Route path="/contacts" element={<Contacts />} />
@@ -40,11 +35,11 @@ function App() {
               <Route path="/pie" element={<Pie />} />
               <Route path="/line" element={<Line />} />
               <Route path="/geography" element={<Geography />} />
-            </Routes>
-          </main>
-        </div>
+            </Route>
+          </Routes>
       </ThemeProvider>
     </ColorModeContext.Provider>
+    </div>
     );
 }
 
