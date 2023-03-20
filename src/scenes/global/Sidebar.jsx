@@ -29,62 +29,63 @@ import SettingsOutlined from "@mui/icons-material/SettingsOutlined";
 import ChevronLeft from "@mui/icons-material/ChevronLeft"
 import ChevronRightOutlined from "@mui/icons-material/ChevronRightOutlined"
 // import { tokens } from "../../theme";
+//added /AdminDashboard for gh pages, temp remove if working local.
 
 const navItems = [
   {
     text: "Dashboard",
     icon: <HomeOutlinedIcon />,
-    link: "/",
+    link: "AdminDashboard/",
   },
   {
     text: "Manage Team",
     icon: <PeopleOutlinedIcon />,
-    link: "/team",
+    link: "AdminDashboard/team",
   },
   {
     text: "Contacts Information",
     icon: <ContactsOutlinedIcon />,
-    link: "/contacts",
+    link: "AdminDashboard/contacts",
   },
   {
     text: "Invoice Balances",
     icon: <ReceiptOutlinedIcon />,
-    link: "/invoices",
+    link: "AdminDashboard/invoices",
   },
   {
     text: "Profile Form",
     icon: <PersonOutlinedIcon />,
-    link: "/form",
+    link: "AdminDashboard/form",
   },
   {
     text: "Calendar",
     icon: <CalendarTodayOutlinedIcon />,
-    link: "/calendar",
+    link: "AdminDashboard/calendar",
   },
   {
     text: "FAQ Page",
     icon: <HelpOutlineOutlinedIcon />,
-    link: "/faq",
+    link: "AdminDashboard/faq",
   },
   {
     text: "Bar Chart",
     icon: <BarChartOutlinedIcon />,
-    link: "/bar",
+    link: "AdminDashboard/bar",
   },
   {
     text: "Pie Chart",
     icon: <PieChartOutlineOutlinedIcon />,
-    link: "/pie",
+    link: "AdminDashboard/pie",
   },
   {
     text: "Line Chart",
     icon: <TimelineOutlinedIcon />,
-    link: "/line",
+    link: "AdminDashboard/line",
   },
   {
     text: "Geography Chart",
     icon: <MapOutlinedIcon />,
-    link: "/geography",
+    link: "AdminDashboard/geography",
   },
 ];
 
