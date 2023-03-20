@@ -16,6 +16,7 @@ import ProgressCircle from "../../components/ProgressCircle";
 const Dashboard = () => {
     const theme = useTheme();
     const colors = tokens(theme.palette.mode);
+    // const isNonMediumScreens = useMediaQuery("min-width: 600px")
 
     //Next time, seperate rows into seperate components
     //That would make dashboard easier to read
@@ -51,7 +52,7 @@ const Dashboard = () => {
       >
         {/* Row 1 */}
         <Box
-          gridColumn="span 3"
+          gridColumn={ "span 3"}
           backgroundColor={colors.primary[400]}
           display="flex"
           alignItems="center"
