@@ -23,12 +23,13 @@ import BarChartOutlinedIcon from "@mui/icons-material/BarChartOutlined";
 import PieChartOutlineOutlinedIcon from "@mui/icons-material/PieChartOutlineOutlined";
 import TimelineOutlinedIcon from "@mui/icons-material/TimelineOutlined";
 import MapOutlinedIcon from "@mui/icons-material/MapOutlined";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import FlexBetween from "../../components/FlexBetween";
 import SettingsOutlined from "@mui/icons-material/SettingsOutlined";
 import ChevronLeft from "@mui/icons-material/ChevronLeft"
 import ChevronRightOutlined from "@mui/icons-material/ChevronRightOutlined"
+// import { tokens } from "../../theme";
 
 const navItems = [
   {
@@ -83,14 +84,11 @@ const Sidebar = ({
   setIsSidebarOpen,
   isNonMobile,
 }) => {
-  const { pathname } = useLocation();
   const [active, setActive] = useState("");
   const navigate = useNavigate();
   const theme = useTheme();
+  // const colors = tokens(theme.palette.mode);
 
-  useEffect(() => {
-    setActive(pathname.substring(1));
-  }, [pathname]);
 
   return (
     <Box component="nav">
@@ -116,7 +114,7 @@ const Sidebar = ({
               <FlexBetween color={theme.palette.secondary.main}>
                 <Box display="flex" alignItems="center" gap="0.5rem">
                   <Typography variant="h4" fontWeight="bold">
-                    ECOMVISION
+                    KRISE ADMINISTRATION
                   </Typography>
                 </Box>
                 {!isNonMobile && (
@@ -182,8 +180,8 @@ const Sidebar = ({
             <FlexBetween textTransform="none" gap="1rem" m="1.5rem 2rem 0 3rem">
               <Box
                 component="img"
-                alt="profile"
-                src="user.png"
+                alt="user"
+                src="assets/user.png"
                 height="40px"
                 width="40px"
                 borderRadius="50%"
