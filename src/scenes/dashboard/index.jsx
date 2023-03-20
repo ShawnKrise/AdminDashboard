@@ -57,6 +57,7 @@ const Dashboard = () => {
           alignItems="center"
           justifyContent="center"
         >
+          
           <StatBox
             title="8,221"
             subtitle="Emails Sent"
@@ -68,6 +69,7 @@ const Dashboard = () => {
               />
             }
           />
+          
         </Box>
         <Box
           gridColumn="span 3"
