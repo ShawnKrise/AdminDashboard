@@ -1,8 +1,7 @@
 import React from "react";
-import {
-  Box,
+import {Box,
   Divider,
-  Drawer,
+  Drawer, 
   IconButton,
   List,
   ListItem,
@@ -24,57 +23,71 @@ import PieChartOutlineOutlinedIcon from "@mui/icons-material/PieChartOutlineOutl
 import TimelineOutlinedIcon from "@mui/icons-material/TimelineOutlined";
 import MapOutlinedIcon from "@mui/icons-material/MapOutlined";
 import { useState } from "react";
-import { useLocation, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import FlexBetween from "../../components/FlexBetween";
 import SettingsOutlined from "@mui/icons-material/SettingsOutlined";
 import ChevronLeft from "@mui/icons-material/ChevronLeft"
 import ChevronRightOutlined from "@mui/icons-material/ChevronRightOutlined"
 // import { tokens } from "../../theme";
 
+
+//try using url to fix link 
+
 const navItems = [
   {
     text: "Dashboard",
     icon: <HomeOutlinedIcon />,
+    link: "/",
   },
   {
     text: "Manage Team",
     icon: <PeopleOutlinedIcon />,
+    link: "/team",
   },
   {
     text: "Contacts Information",
     icon: <ContactsOutlinedIcon />,
+    link: "/contacts",
   },
   {
     text: "Invoice Balances",
     icon: <ReceiptOutlinedIcon />,
+    link: "/invoices",
   },
   {
     text: "Profile Form",
     icon: <PersonOutlinedIcon />,
+    link: "/form",
   },
   {
     text: "Calendar",
     icon: <CalendarTodayOutlinedIcon />,
+    link: "/calendar",
   },
   {
     text: "FAQ Page",
     icon: <HelpOutlineOutlinedIcon />,
+    link: "/faq",
   },
   {
     text: "Bar Chart",
     icon: <BarChartOutlinedIcon />,
+    link: "/bar",
   },
   {
     text: "Pie Chart",
     icon: <PieChartOutlineOutlinedIcon />,
+    link: "/pie",
   },
   {
     text: "Line Chart",
     icon: <TimelineOutlinedIcon />,
+    link: "/line",
   },
   {
     text: "Geography Chart",
     icon: <MapOutlinedIcon />,
+    link: "/geography",
   },
 ];
 
@@ -125,7 +138,7 @@ const Sidebar = ({
               </FlexBetween>
             </Box>
             <List>
-              {navItems.map(({ text, icon }) => {
+              {navItems.map(({ text, icon, link }) => {
                 if (!icon) {
                   return (
                     <Typography key={text} sx={{ m: "2.25rem 0 1rem 3rem" }}>
@@ -133,22 +146,21 @@ const Sidebar = ({
                     </Typography>
                   );
                 }
-                const lcText = text.toLowerCase();
 
                 return (
                   <ListItem key={text} disablePadding>
                     <ListItemButton
                       onClick={() => {
-                        navigate(`/${lcText}`);
-                        setActive(lcText);
+                        navigate(link);
+                        setActive(link);
                       }}
                       sx={{
                         backgroundColor:
-                          active === lcText
+                          active === link
                             ? theme.palette.secondary[300]
                             : "transparent",
                         color:
-                          active === lcText
+                          active === link
                             ? theme.palette.primary[600]
                             : theme.palette.secondary[100],
                       }}
@@ -157,7 +169,7 @@ const Sidebar = ({
                         sx={{
                           ml: "2rem",
                           color:
-                            active === lcText
+                            active === link
                               ? theme.palette.primary[600]
                               : theme.palette.secondary[200],
                         }}
@@ -165,7 +177,7 @@ const Sidebar = ({
                         {icon}
                       </ListItemIcon>
                       <ListItemText primary={text} />
-                      {active === lcText && (
+                      {active === link && (
                         <ChevronRightOutlined sx={{ ml: "auto" }} />
                       )}
                     </ListItemButton>
