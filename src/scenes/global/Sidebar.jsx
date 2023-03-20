@@ -30,9 +30,6 @@ import ChevronLeft from "@mui/icons-material/ChevronLeft"
 import ChevronRightOutlined from "@mui/icons-material/ChevronRightOutlined"
 // import { tokens } from "../../theme";
 
-
-//try using url to fix link 
-
 const navItems = [
   {
     text: "Dashboard",
