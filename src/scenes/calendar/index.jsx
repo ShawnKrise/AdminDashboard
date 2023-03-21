@@ -12,15 +12,19 @@ import {
   ListItemText,
   Typography,
   useTheme,
+  useMediaQuery
 } from "@mui/material";
 import Header from "../../components/Header";
 import { tokens } from "../../theme";
+
 
 //importing FullCalendar for Calendar dependancy
 const Calendar = () => {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
   const [currentEvents, setCurrentEvents] = useState([]);
+  const isMobile = useMediaQuery('(max-width:768px)');
+
 
   //create a const for date click
   const handleDateClick = (selected) => {
@@ -61,6 +65,7 @@ const Calendar = () => {
           backgroundColor={colors.primary[400]}
           p="15px"
           borderRadius="4px"
+          hidden={isMobile}
         >
           <Typography variant="h5"> Scheduled Events</Typography>
           <List>
