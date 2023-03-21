@@ -1,4 +1,4 @@
-import { useTheme, useMediaQuery } from "@mui/material";
+import { useTheme } from "@mui/material";
 import { ResponsiveChoropleth } from "@nivo/geo";
 import { geoFeatures } from "../data/mockGeoFeatures";
 import { tokens } from "../theme";
@@ -8,9 +8,7 @@ const GeographyChart = ({ isDashboard = false }) => {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
 
-  const isSmallScreen = useMediaQuery((theme) => theme.breakpoints.down("sm"));
-
-
+  //Scaling works for Dashboard but doesn't scale properly for Geo page on mobile
   return (
     <ResponsiveChoropleth
       data={data}
@@ -48,13 +46,13 @@ const GeographyChart = ({ isDashboard = false }) => {
       unknownColor="#666666"
       label="properties.name"
       valueFormat=".2s"
-      projectionScale={isSmallScreen ? 150 : isDashboard ? 40 : 150}
-      projectionTranslation={isSmallScreen ? [-0, 0.5] : isDashboard ? [0.49, 0.6] : [0.5, 0.5]}
+      projectionScale={isDashboard ? 40 : 70}
+        Translation={isDashboard ? [0.49, 0.6] : [0.5, 0.5]}
       projectionRotation={[0, 0, 0]}
       borderWidth={1.5}
       borderColor="#ffffff"
       legends={
-        !isDashboard && isSmallScreen
+        !isDashboard
           ? [
               {
                 anchor: "bottom-left",

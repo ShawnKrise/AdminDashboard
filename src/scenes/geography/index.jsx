@@ -1,4 +1,4 @@
-import { Box, colors } from "@mui/material";
+import { Box } from "@mui/material";
 import Header from "../../components/Header";
 import GeographyChart from "../../components/GeographyChart";
 import { tokens } from "../../theme";
@@ -11,7 +11,12 @@ const Geography = () => {
     return (
         <Box m="20px">
             <Header title="Geography Chart" subtitle="Simple Geography Chart" />
-            <Box  border ={`1px solid ${colors.grey[100]}` } borderRadius="4px" height="75vh">
+            <Box  
+            border ={`1px solid ${colors.grey[100]}` } 
+            borderRadius="4px" 
+            height="75vh"
+            width="100%" 
+            >
                 <GeographyChart />
             </Box>
         </Box>
