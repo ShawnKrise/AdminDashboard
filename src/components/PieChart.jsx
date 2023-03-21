@@ -5,6 +5,7 @@ import { useTheme } from "@mui/material";
 
 //set up with Nivo
 //Added theme compatability
+//Mock data for Pie chart is showing random programming tools
 const PieChart = () => {
     const theme = useTheme();
     const colors = tokens(theme.palette.mode);
@@ -87,7 +88,7 @@ const PieChart = () => {
             translateX: 0,
             translateY: 56,
             itemsSpacing: 0,
-            itemWidth: 100,
+            itemWidth: 65,
             itemHeight: 18,
             itemTextColor: "#999",
             itemDirection: "left-to-right",

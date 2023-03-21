@@ -10,6 +10,7 @@ const LineChart = ( isDashboard = false) => {
     //colors are setup for dashboard and page using mockdata and nivo
     //if colors aren't passed in they would default to nivo colors
     //isDashboard is undefined since limited space on page
+    //The LineChart mockData is using forms of transportation 
     return (
         <ResponsiveLine
         data={data}
@@ -58,7 +59,7 @@ const LineChart = ( isDashboard = false) => {
         axisBottom={{
             orient: 'bottom',
             tickSize: 5,
-            tickPadding: 5,
+            tickPadding: 15,
             tickRotation: 0,
             legend: isDashboard ? undefined : 'transportation',
             legendOffset: 36,
