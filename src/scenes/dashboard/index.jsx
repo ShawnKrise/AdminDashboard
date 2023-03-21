@@ -1,5 +1,5 @@
 import Header from "../../components/Header";
-import { Box, Button, IconButton, Typography, useTheme } from "@mui/material";
+import { Box, Button, IconButton, Typography, useTheme, useMediaQuery } from "@mui/material";
 import { tokens } from "../../theme";
 import { mockTransactions } from "../../data/mockData";
 import DownloadOutlinedIcon from "@mui/icons-material/DownloadOutlined";
@@ -16,7 +16,8 @@ import ProgressCircle from "../../components/ProgressCircle";
 const Dashboard = () => {
     const theme = useTheme();
     const colors = tokens(theme.palette.mode);
-    // const isNonMediumScreens = useMediaQuery("min-width: 600px")
+    const isNonMediumScreens = useMediaQuery("(min-width: 600px)");
+
 
     //Next time, seperate rows into seperate components
     //That would make dashboard easier to read
@@ -46,9 +47,12 @@ const Dashboard = () => {
         {/* Setup Grid system for charts */}
             <Box
         display="grid"
-        gridTemplateColumns="repeat(12, 1fr)"
-        gridAutoRows="140px"
+        gridTemplateColumns= "repeat(12, 1fr)"
+        gridAutoRows= "160px"
         gap="20px"
+        sx={{
+          "& > div": { gridColumn: isNonMediumScreens ? undefined : "span 12" },
+        }}
       >
         {/* Row 1 */}
         <Box
