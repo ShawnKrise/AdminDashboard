@@ -18,6 +18,7 @@ const Team = () => {
           headerName: "Name",
           flex: 1, 
           cellClassName: "name-column--cell", 
+          minWidth: 150,
         },
         { field: "age", 
           headerName: "Age",
@@ -28,10 +29,12 @@ const Team = () => {
         { field: "phone", 
           headerName: "Phone Number",
           flex: 1,
+          minWidth: 150,
         },
         { field: "email", 
           headerName: "Email",
           flex: 1,
+          minWidth: 150,
         },
         //use renderCell to grab access property
         //BG color changes based on access
@@ -39,6 +42,7 @@ const Team = () => {
         { field: "access", 
           headerName: "Access Level",
           flex: 1,
+          minWidth: 150,
           renderCell: ({ row: {access }}) => {
             return (
                 <Box
@@ -99,7 +103,10 @@ const Team = () => {
                },
              }}
             >
-                <DataGrid checkboxSelection rows={mockDataTeam} columns={columns} /> 
+                <DataGrid 
+                checkboxSelection 
+                rows={mockDataTeam} 
+                columns={columns} /> 
             </Box>
         </Box>
     );

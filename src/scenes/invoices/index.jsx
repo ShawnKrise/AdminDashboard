@@ -17,18 +17,22 @@ const Invoices = () => {
           headerName: "Name",
           flex: 1, 
           cellClassName: "name-column--cell", 
+          minWidth: 150,
         },
         { field: "phone", 
           headerName: "Phone Number",
           flex: 1,
+          minWidth: 150,
         },
         { field: "email", 
           headerName: "Email",
           flex: 1,
+          minWidth: 150,
         },
         { field: "cost", 
         headerName: "Cost",
         flex: 1,
+        minWidth: 150,
         renderCell: (params) => (
           <Typography color={colors.greenAccent[500]}>
             ${params.row.cost}
@@ -38,6 +42,7 @@ const Invoices = () => {
         { field: "date", 
           headerName: "Date",
           flex: 1,
+          minWidth: 150,
         },
         
     ];
